@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Olá Mundo</title>
+</head>
+
+<body>
+    <div id="tela-lista-pedidos" class="tela">
+        <div class="lista-pedidos"></div>
+        <button id="btn-novo-pedido" class="btn-grande btn-mudar-tela" data-tela-origem="tela-lista-pedidos"
+            data-tela-destino="tela-novo-pedido">Novo Pedido</button>
+    </div>
+    <div id="tela-novo-pedido" class="tela escondido">
+        <h1>Criar Pedido</h1>
+        <div id="previsualizacao-pizza" class="previsualizacao-imagem"></div>
+        <div class="formulario-pizza">
+            <div class="entrada-formulario">
+                <label for="nome-pizza">Nome:</label>
+                <input type="text" name="nome-pizza" id="nome-pizza">
+            </div>
+            <div class="entrada-formulario">
+                <label for="preco-pizza">Preço:</label>
+                <input type="number" name="preco-pizza" id="preco-pizza" min="0" step="0.01">
+            </div>
+            <div class="lista-botoes">
+                <button id="tirar-foto">Foto</button>
+                <button id="salvar-pizza" data-tela-origem="tela-novo-pedido" data-tela-destino="tela-lista-pedidos">Salvar</button>
+                <button id="deletar-pizza" class="escondido" data-tela-origem="tela-novo-pedido" data-tela-destino="tela-lista-pedidos">Deletar</button>
+                <button id="btn-cancelar-pedido" class="btn-mudar-tela" data-tela-origem="tela-novo-pedido"
+                    data-tela-destino="tela-lista-pedidos">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
